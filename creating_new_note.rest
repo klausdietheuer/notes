@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "WebStorm http-client is a perfect tool to test react apps",
+  "important": true
+}
+
+###
+DELETE http://localhost:3001/api/notes/2
