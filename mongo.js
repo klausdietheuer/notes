@@ -7,32 +7,32 @@ if (process.argv.length < 3) {
 
 const password = process.argv[2]
 
-const url = `mongodb+srv://kdietheuer_db_user:${password}@cluster0.ykv9mvt.mongodb.net/noteApp?retryWrites=true&w=majority&appName=Cluster0`
-
-mongoose.set('strictQuery',false)
-
-mongoose.connect(url)
-
-const noteSchema = new mongoose.Schema({
-    content: String,
-    important: Boolean,
-})
-
-const Note = mongoose.model('Note', noteSchema)
+// const url = `mongodb+srv://kdietheuer_db_user:${password}@cluster0.ykv9mvt.mongodb.net/noteApp?retryWrites=true&w=majority&appName=Cluster0`
 //
-// const note = new Note({
-//     content: 'GET and POST are the most important methods of HTTP protocol',
-//     important: true,
+// mongoose.set('strictQuery',false)
+//
+// mongoose.connect(url)
+//
+// const noteSchema = new mongoose.Schema({
+//     content: String,
+//     important: Boolean,
 // })
 //
-// note.save().then(result => {
-//     console.log('note saved!')
+// const Note = mongoose.model('Note', noteSchema)
+// //
+// // const note = new Note({
+// //     content: 'GET and POST are the most important methods of HTTP protocol',
+// //     important: true,
+// // })
+// //
+// // note.save().then(result => {
+// //     console.log('note saved!')
+// //     mongoose.connection.close()
+// // })
+//
+// Note.find({ important: true }).then(result => {
+//     result.forEach(note => {
+//         console.log(note)
+//     })
 //     mongoose.connection.close()
 // })
-
-Note.find({ important: true }).then(result => {
-    result.forEach(note => {
-        console.log(note)
-    })
-    mongoose.connection.close()
-})
